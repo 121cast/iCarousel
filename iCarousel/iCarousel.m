@@ -801,6 +801,8 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     //calculate transform
     CATransform3D transform = [self transformForItemView:view withOffset:offset];
     
+	view.superview.layer.rasterizationScale = [UIScreen mainScreen].scale;
+	
     //transform view
     view.superview.layer.transform = transform;
     
